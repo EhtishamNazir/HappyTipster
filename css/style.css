@@ -1,0 +1,764 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html{
+	scroll-behavior: smooth;
+}
+body{
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+    background-color: #FAFAFB;
+}
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Header*/
+header{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 15px;
+    z-index: 11;
+    background-color: #212C40;
+}
+header.fixed{
+    background-color: ##212C40;
+    position: fixed;
+    z-index: 100;
+    animation: fixHeader .5s ease;
+}
+@keyframes fixHeader{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+header .row{
+    justify-content: space-between;
+    align-items: center;
+}
+header .brand-name a img{
+    width: 100px;
+}
+header .navbar{
+/*    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+*/}
+header .navbar2{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    display: none;
+}
+header .navbar3{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    display: none;
+}
+header .navbar2 .search-bar,
+header .navbar3 .search-bar-sm{
+    float: left;
+}
+header .navbar2 .search-bar form input,
+header .navbar3 .search-bar-sm form input{
+    background-color: #212C40;
+    border: none;
+    outline: none;
+    width: 400px;
+}
+header .navbar3 .search-bar-sm form input{
+    width: auto;
+}
+header .navbar2 .search-bar form input::placeholder,
+header .navbar3 .search-bar-sm form input::placeholder{
+    color: #FFFFFF;
+}
+header .navbar2 .close-btn-cont,
+header .navbar3 .close-btn-sm-cont{
+    float: left;
+}
+header .navbar ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+header .navbar ul li{
+    display: inline-block;
+    margin-left: 20px;
+}
+header .navbar ul li a{
+    font-size: 15px;
+    text-decoration: none;
+    line-height: 72px;
+    color: #ffffff;
+    position: relative;
+    display: block;
+    font-weight: 600;
+}
+header.fixed .navbar ul li a{
+    color: #FFFFFF;
+}
+header .navbar .search-btn-cont{
+    float: left;
+    line-height: 72px;
+}
+header .navbar .search-btn-cont button{
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    color: #FFFFFF;
+    margin-left: 20px;
+    cursor: pointer;
+}
+header .navbar2 .close-btn-cont button,
+header .navbar3 .close-btn-sm-cont button{
+    font-size: 20px;
+    font-weight: 300;
+    background-color: transparent;
+    border: none;
+    color: #FFFFFF;
+    margin-left: 20px;
+    cursor: pointer;
+}
+header .search-btn-sm-cont{
+    display: none;
+    float: left;
+}
+header .search-btn-sm-cont button{
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    color: #FFFFFF;
+    margin-left: 20px;
+    cursor: pointer;
+}
+/*Hamburger Menu e.g Menu for mobile devices*/
+.ham-burger .fa{
+    font-size: 20px;
+    display: none;
+    height: 30px;
+    width: 35px;
+    background-color: #212C40;
+    color: #ffffff;
+    border-radius: 3px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #eeeeee;
+}
+
+/*Home Section Styles*/
+#home{
+    width: 100%;
+    height: 500px;
+    overflow:hidden;
+    position: relative;
+}
+
+#home .slide{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index:1; 
+    display:none;
+    padding:0 15px;
+    animation: slide 2s ease;
+}
+#home .slide.active{
+    display: flex;
+}
+@keyframes slide{
+    0%{
+        transform:scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+#home .caption{
+    /*width:90%;*/
+    /*margin: auto;*/
+    text-align: center;
+}
+#home .caption h1{
+    font-size:46px;
+    color:#ffffff;
+    margin-bottom: 10px;
+    font-weight: 300;
+    
+}
+#home .slide.active .caption h1{
+    opacity:0;
+    animation: captionText .5s ease forwards;
+    animation-delay:1s;
+}
+#home .caption p{
+    font-size: 14px;
+    font-weight: 400;
+    color:#ffffff;
+    margin-bottom: 20px;
+}
+#home .slide.active .caption p{
+    opacity:0;
+    animation: captionText .5s ease forwards;
+    animation-delay:1.2s;
+}
+#home .caption a{
+ display: inline-block;
+ padding:10px 20px;
+ background-color: #000000;
+ text-decoration: none;
+ color:#ffffff;
+ border: 2px solid #ffffff;
+ border-radius: 5px;
+ font-size: 20px;
+ font-weight: 500;
+ background-color: rgba(0, 0, 0, 0.3);
+}
+#home .caption a .fa{
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 10px;
+    display: none;
+}
+#home .caption a:hover{
+    border-color: rgba(59, 64, 72, 0.5);
+    background-color: rgba(59, 64, 72, 0.5);
+}
+#home .caption a:hover .fa{
+    display: inline-block;
+}
+#home .slide.active .caption a{
+    opacity:0;
+    animation: captionText .5s ease forwards;
+    animation-delay:1.4s;
+}
+
+@keyframes captionText{
+    0%{
+        opacity:0; transform: translateX(-100px);
+    }
+    100%{
+     opacity:1; transform: translateX(0px); 
+    }
+}
+
+#home .controls .prev,
+#home .controls .next{
+ position: absolute;
+ z-index:2;
+ top:50%;
+ height:40px;
+ width: 40px;
+ margin-top: -20px;
+ color:#ffffff;
+ text-align: center;
+ line-height: 40px;
+ font-size:20px;
+ cursor:pointer;
+ transition: all .5s ease;
+ visibility: hidden;
+ background-color: transparent;
+}
+#home .controls .prev .fa,
+#home .controls .next .fa{
+    font-size: 48px;
+    font-weight: 500;
+}
+#home .controls .prev:hover,
+#home .controls .next:hover{
+    cursor: pointer;
+}
+#home .controls .prev{
+ left: 0;
+}
+#home .controls .next{
+ right: 0;
+}
+#home:hover .prev{
+    cursor: pointer;
+    visibility: visible;
+    animation: animation1 .5s ease forwards;
+}
+#home:hover .next{
+    cursor: pointer;
+    visibility: visible;
+    animation: animation2 .5s ease forwards;
+}
+@keyframes animation1{
+    from{
+        left: 0;
+    }
+    to{
+        left: 20px;
+    }
+}
+@keyframes animation2{
+    from{
+        right: 0;
+    }
+    to{
+        right: 20px;
+    }
+}
+#home .indicator{
+    position: absolute;
+    left:50%;
+    bottom:30px;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+#home .indicator div{
+    display: inline-block;
+    width:10px;
+    height: 10px;
+    color:#8A8D93;
+    background-color: #8A8D93;
+    border-radius:50%;
+    text-align: center;
+    margin:0 3px;
+}
+#home .indicator div.active{
+ background-color: #ffffff;
+ color: #ffffff;
+}
+
+/*About Section Styles*/
+#about{
+    width: 100%;
+    height: 900px;
+    background-image: url("../img/Artboard-–-1.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 55%;
+}
+#about .about-heading {
+    width: 50%;
+    padding-top: 150px;
+}
+#about .about-heading p{
+    position: relative;
+    font-size: 50px;
+    font-weight: 600;
+    color: #333333;
+}
+#about .about-heading p:before{
+    content: ' ';
+    position: absolute;
+    width: 50px;
+    height: 15px;
+    top: -40px;
+    left: 0;
+    right: 30px;
+    background-color: #212c40;
+}
+#about .about-btn{
+    margin-top: 50px;
+}
+#about .about-btn a{
+    font-size: 12px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: #212C40;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+#about .about-btn a .fa{
+    color: #000000;
+    background-color: #FFFFFF;
+    padding: 2px 5px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+#about-desc{
+    width: 100%;
+    height: 800px;
+    background-image: url("../img/Group-15705.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 55%;
+    margin-top: 50px;
+}
+#about-desc .about-desc-text {
+    width: 40%;
+    padding-top: 90px;
+}
+#about-desc .about-desc-text p{
+    font-size: 18px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 35px;
+    margin-bottom: 20px;
+}
+
+/*About Slider Styles*/
+#about-slider{
+    margin-top: 50px;
+}
+
+/*Download Section Styles*/
+#download{
+    width: 100%;
+    margin: 100px 0;
+}
+#download .download-head{
+    margin-bottom: 10px;
+}
+#download .download-head p{
+    font-size: 32px;
+    font-weight: 600;
+    color: #333333;
+    text-align: center;
+}
+#download .download-desc{
+    margin-bottom: 30px;
+}
+#download .download-desc p{
+    width: 80%;
+    margin: auto;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    text-align: center;
+}
+#download .download-images{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*Contact Us Section Styles*/
+#contact{
+    position: relative;
+}
+#contact .contact-head{
+    margin: 50px 0;
+}
+#contact .contact-head p{
+    font-size: 50px;
+    font-weight: 600;
+    color: #333333;
+}
+#contact .contact-desc-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+#contact .contact-form{
+    width: 75%;
+}
+#contact .contact-form-head p{
+    font-size: 18px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 35px;
+}
+#contact .contact-form form{
+    margin: 50px 0;
+    width: 100%;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+#contact .contact-form form .form-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+#contact .contact-form form .form-group .form-control{
+    width: 48%;
+    padding: 15px 10px;
+    border: none;
+    outline: none;
+    border: 1px solid #E8F0F5;
+    background-color: #FAFDFF;
+}
+#contact .contact-form form .send-btn{
+    text-align: right;
+}
+#contact .contact-form form .send-btn input[type="submit"]{
+    color: #FFFFFF;
+    background-color: #212C40;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/*Footer Section Styles*/
+#footer{
+    margin: 100px 0 50px 0;
+}
+#footer .social-links{
+    width: 100%;
+    text-align: center;
+}
+#footer .social-links a{
+    margin-right: 40px;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+    header .container{
+        width: 90%;
+    }
+    header{
+        position: fixed;
+        padding: 0;
+        background-color: #212C40;
+        border: none;
+    }
+    header .brand-name a{
+        color: #000000;
+    }
+    .ham-burger .fa{
+        display: inline-block;
+    }
+    .navbar{
+        position: absolute;
+        background-color: #212C40;
+        width: 80%;
+        left: 10%;
+        top: 72px;
+        padding: 15px;
+        display: none;
+    }
+    .navbar .search-btn-cont{
+        display: none;
+    }
+    .navbar.show{
+        display: block;
+    }
+    header .navbar ul li{
+        display: block;
+        margin: 0;
+    }
+    header .navbar ul li a{
+        line-height: 42px;
+        color: #ffffff;
+    }
+    header .search-btn-sm-cont{
+        display: inline-block;
+    }
+
+    #home .caption h1{
+        font-size: 24px;
+    }
+    @keyframes animation1{
+        from{
+            left: 0;
+        }
+        to{
+            left: 5px;
+        }
+    }
+    @keyframes animation2{
+        from{
+            right: 0;
+        }
+        to{
+            right: 5px;
+        }
+    }
+
+    #about{
+        height: 650px;
+        background-position: bottom;
+    }
+    #about .about-heading{
+        padding-top: 100px;
+        width: 100%;
+    }
+    #about .about-heading p{
+        font-size: 28px;
+    }
+
+    #about-desc{
+        height: 950px;
+        background-size: 80%;
+        background-position: center bottom;
+    }
+    #about-desc .about-desc-text{
+        padding-top: 50px;
+        width: 100%;
+    }
+    #about-desc .about-desc-text p{
+        font-size: 16px;
+    }
+
+    #about-slider .container{
+        width: 100%;
+    }
+
+    #download .download-head p{
+        font-size: 24px;
+        text-align: center;
+    }
+    #download .download-images a img{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    #contact .contact-head p{
+        font-size: 24px;
+    }
+    #contact .contact-form{
+        width: 100%;
+    }
+    #contact .contact-form form .form-group .form-control{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #footer{
+        margin: 50px 0;
+    }
+    #footer .social-links{
+        text-align: center;
+    }
+    #footer .social-links a img{
+        width: 50px;
+    }
+}
+@media(min-width: 768px) and (max-width: 1023px){
+    header .container{
+        width: 90%;
+    }
+    header{
+        position: fixed;
+        padding: 0;
+        background-color: #212C40;
+        border: none;
+    }
+    header .brand-name a{
+        color: #000000;
+    }
+    .ham-burger .fa{
+        display: inline-block;
+    }
+    .navbar{
+        position: absolute;
+        background-color: #212C40;
+        width: 80%;
+        left: 10%;
+        top: 72px;
+        padding: 15px;
+        display: none;
+    }
+    .navbar .search-btn-cont{
+        display: none;
+    }
+    .navbar.show{
+        display: block;
+    }
+    header .navbar ul li{
+        display: block;
+        margin: 0;
+    }
+    header .navbar ul li a{
+        line-height: 42px;
+        color: #ffffff;
+    }
+    header .search-btn-sm-cont{
+        display: inline-block;
+    } 
+
+    #about{
+        height: 900px;
+        background-position: bottom;
+    }
+    #about .about-heading{
+        padding-top: 100px;
+        width: 100%;
+    }
+    #about .about-heading p{
+        font-size: 30px;
+    }
+
+    #about-desc{
+        height: 1000px;
+        background-size: 80%;
+        background-position: center bottom;
+    }
+    #about-desc .about-desc-text{
+        padding-top: 50px;
+        width: 100%;
+    }
+    #about-desc .about-desc-text p{
+        /*font-size: 16px;*/
+    }
+
+    #about-slider .container{
+        width: 100%;
+    }
+
+    #contact .contact-form{
+        width: 100%;
+    }
+}
+@media(min-width: 1024px) and (max-width: 1050px){
+    #about {
+        /*width: 40%;*/
+        background-size: 50%;
+        background-position: top right;
+    }
+
+    #about-desc{
+        margin-top: 0;
+        background-position: top right;
+    }
+    #about-desc .about-desc-text{
+        padding-top: 0;
+    }
+
+    #about-slider .container{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
